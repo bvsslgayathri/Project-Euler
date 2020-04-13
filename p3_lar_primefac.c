@@ -1,31 +1,31 @@
 #include <stdio.h>
-int prime(unsigned long long int);
+#include<math.h>
+int prime( long int);
 int main()
 {
-    unsigned long long int n,i;
+    long int n,i;
     int s;
     n=600851475143ULL;
-    for(i=n;i>=1ULL;i--)
+    for(i=(long)sqrt(n);i>=2ULL;i--)
     {
-        if(n%i==0)
+        if(n%i==0&&prime(i))
         {
-            s=prime(i);
-            if(s==2)
-            {
                 printf("%llu",i);
                 break;
-            }
+            
         }
     }
 }
-int prime(unsigned long long int p)
+
+int prime(long int p)
 {
     long int i;
-    int c=0;
-    for(i=1;i<=p;i++)
+    
+    for(i=2;i<=(long)sqrt(p);i++)
     {
         if(p%i==0)
-        c++;
+        return 0;
     }
-    return c;
+    return 1;
+    
 }
