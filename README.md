@@ -1,2 +1,2 @@
 # :PEN: Project-Euler
-Solutions for every problem in Project Euler c 
+:paperclip: Solutions for every problem in Project Euler c 
