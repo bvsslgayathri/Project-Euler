@@ -3,46 +3,46 @@
 
 int main()
 {
-    int d[]={0,3,3,5,4,4,3,5,5,4};
-    int s[]={3,6,6,8,8,7,7,9,8,8};
-    int k[]={0,0,6,6,5,5,5,7,6,6};
-    unsigned hundred =7;
-    unsigned andi =3;
-    unsigned thousand=8;
-    unsigned sum=0;
-    unsigned i;
-    for(i=0;i<10;i++)
+  unsigned s1[]={0,3,3,5,4,4,3,5,5,4};
+  unsigned s2[]={3,6,6,8,8,7,7,9,8,8};
+  unsigned s3[]={0,0,6,6,5,5,5,7,6,6};
+  unsigned hundred =7;
+  unsigned and=3;
+  unsigned thousand=8;
+  unsigned sum=0;
+  unsigned i;
+   for(i=0;i<10;i++)
     {
-        sum+=d[i];
+        sum+=s1[i];
         
     }
     
     for(i=0;i<10;i++)
     {
-        sum+=s[i];
+        sum+=s2[i];
         
     }
     for(i=20;i<100;i++)
     {
-        sum+=k[i/10]+d[i%10];
+        sum+=s3[i/10]+s1[i%10];
         
     }
     for(i=1;i<10;i++)
     {
         int j;
-        sum+=d[i]+hundred;
+        sum+=s1[i]+hundred;
         for(j=1;j<10;j++)
         {
-            sum+=d[i]+hundred+andi+d[j];
+            sum+=s1[i]+hundred+and+s1[j];
         }
         for(j=10;j<20;j++)
         {
-            sum+=d[i]+hundred+andi+s[j];
+            sum+=s1[i]+hundred+and+s2[j];
             
         }
         for(j=20;j<100;j++)
         {
-            sum+=d[i]+hundred+andi+k[j/10]+d[j%10];
+            sum+=s1[i]+hundred+and+s3[j/10]+s2[j%10];
             
         }
         
@@ -50,4 +50,5 @@ int main()
     sum+=11;
     printf("%u",sum);
 }
+
 
