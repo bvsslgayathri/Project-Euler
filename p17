@@ -35,7 +35,7 @@ int main()
         {
             sum+=s1[i]+hundred+and+s1[j];
         }
-        for(j=10;j<20;j++)
+        for(j=1;j<10;j++)
         {
             sum+=s1[i]+hundred+and+s2[j];
             
