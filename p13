@@ -37,3 +37,48 @@ int main()
     for(i=0;i<10;i++)
         printf("%d",ans[i]);
 }
+
+
+
+
+
+
+
+#include <stdio.h>
+#include<stdlib.h>
+int main()
+{
+    FILE *fp;
+    char c;
+    int a[100][100],ans[50];
+    int temp,i,j,k;
+    fp=fopen("text2.txt","Write");
+    if(fp==NULL)
+    {
+        printf("error occured. cannot open file.");
+        exit(1);
+    }
+    for(i=0;i<100;i++)
+    {
+        for(j=0;j<50;j++)
+        {
+            fscanf(fp,"%c",&c);
+            a[i][j]=(int)(c-48);
+        }
+    }
+    for(k=49,i=99;i>=0;i--,k--)
+    {
+        for(j=49;j>=0;j--)
+        {
+            ans[k]+=a[i][j];
+            if(ans[k]>10)
+            {
+                temp=ans[k]/10;
+                ans[k]%=10;
+                ans[k-1]+=temp;
+            }
+        }
+    }
+    for(i=0;i<10;i++)
+        printf("%d",ans[i]);
+}
